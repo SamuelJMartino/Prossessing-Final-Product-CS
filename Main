@@ -31,17 +31,35 @@ void draw() {
   strokeWeight(3);
   Rectangle[] faces = opencv.detect();
   println(faces.length);
+  
+  
+int colorVal=0;
 
-  for (int i = 0; i < faces.length; i++) {
+
+if (keyPressed){
+    if (key == 'a'){
+      
+for (int i = 0; i < faces.length; i++) {
     println(faces[i].x + "," + faces[i].y);
     rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
-    stroke(255, 0, 0);
+    stroke(colorVal);
     rect(faces[i].x+15, faces[i].y+25, faces[i].width/4, faces[i].height/4);
     rect(faces[i].x+50, faces[i].y+25, faces[i].width/4, faces[i].height/4);
     stroke(255,255,255);
     rect(faces[i].x+20, faces[i].y+60, faces[i].width/4+25, faces[i].height/4);
+
   }
+   
+  }
+      
+    }
+    else{
+      
+    }
 }
+    
+  
+
 
 void captureEvent(Capture c) {
   c.read();
